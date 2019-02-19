@@ -39,7 +39,7 @@ class FacebookSpider(scrapy.Spider):
             yield scrapy.Request(response.urljoin(aboutlink),callback=self.scrapedata,meta={'url':response.url})
 
     def scrapedata(self,response):
-        time.sleep(1)
+        # time.sleep(1)
         try:
             name = response.xpath('.//title/text()').extract_first().split('-')[0]
         except:
